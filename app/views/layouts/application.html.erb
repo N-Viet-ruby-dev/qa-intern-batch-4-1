@@ -4,12 +4,22 @@
     <title>Sample</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="container-fluid">
+    <%= render "layouts/header" %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render "layouts/left_side_bar"%>
+      </div>
+      <div class="col-md-6">
+        <%= yield %>
+      </div>
+      <div class="col-md-3">
+        <%= render "layouts/right_side_bar"%>
+      </div>
+    </div>
   </body>
 </html>
