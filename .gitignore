@@ -50,3 +50,4 @@ node_modules/
 test
 config/database.yml
 /public/uploads/
+/config/local_env.yml
