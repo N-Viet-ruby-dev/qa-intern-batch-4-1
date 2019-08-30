@@ -49,3 +49,4 @@ node_modules/
 
 test
 config/database.yml
+/public/uploads/
