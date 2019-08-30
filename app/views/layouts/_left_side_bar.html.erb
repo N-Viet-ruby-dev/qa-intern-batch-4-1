@@ -1,20 +1,6 @@
-<div class="m-auto w-75">
+<div>
   <button class="btn btn-primary btn-block" type="submit">Ask a question</button>
   <ul class="nav flex-column mt-3">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Questions</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Tags</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Badges</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Categories</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Users  </a>
-    </li>
+    <%= nav_helper left_side_bar_items, "nav-link", "nav-item"%>
   </ul>
 </div>
