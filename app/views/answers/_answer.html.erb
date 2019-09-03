@@ -1,0 +1,23 @@
+<div class="card" id="answer_<%= answer.id %>" >
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-1">
+        <%= image_tag answer.user.picture.url, class: "rounded-circle img-fluid" %>
+      </div>
+      <div class="col-md-11 content">
+        <p>
+          <%= link_to answer.user.name.upcase, answer.user, class: "float-left font-weight-bold" %>
+        </p>
+        <div class="clearfix"></div>
+        <p class="text-justify">
+          <%= raw answer.content %>
+        </p>
+        <p class="text-secondary">
+          <span>
+            <%= "Posted #{distance_of_time_in_words(answer.updated_at, Time.now)} ago." %>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

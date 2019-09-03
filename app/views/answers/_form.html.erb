@@ -1,0 +1,10 @@
+<%= form_for [answer.question, answer], remote: true do |f| %>
+  <div class="form-group">
+    <%= f.label :content, "Answer" %>
+    <%= f.text_area :content, class: "ckeditor form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit btn_text, class: "btn btn-primary" %>
+  </div>
+<% end %>

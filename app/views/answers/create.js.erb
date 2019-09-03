@@ -1,0 +1,7 @@
+<% if @answer.errors.any? %>
+  alert('Answer content invalid.');
+<% else %>
+  $('#answer-list').prepend('<%= j render @answer %>');
+  $('#answer-form textarea').val("");
+<% end %>
+

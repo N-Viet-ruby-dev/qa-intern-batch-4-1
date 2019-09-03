@@ -4,9 +4,9 @@
 //= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require select2
 //= require ckeditor/init
+//= require question
 
 $(document).on('turbolinks:load', function() {
   $('.tag-multiple').select2({
