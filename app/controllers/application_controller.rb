@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def logged_in
-    redirect_to login_path, info: "Please login" unless logged_in?
+    return if logged_in?
+    store_location
+    redirect_to login_path, info: "Please login"
   end
 end

@@ -1,5 +1,21 @@
 <div>
-  <button class="btn btn-primary btn-block" type="submit">Ask a question</button>
+  <%= button_tag "Ask a question", class: "btn btn-primary btn-block",
+    data:{ toggle: "modal", target: "#newquestion" } %>
+  <!-- Modal -->
+  <div class="modal fade" id="newquestion" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ask A Question</h5>
+          <%= button_tag fa_icon("close"), class: "close", data:{ dismiss: "modal" } %>
+        </div>
+        <div class="modal-body">
+          <%= render "questions/form", question: Question.new, btn_text: "Create" %>
+        </div>
+      </div>
+    </div>
+  </div>
   <ul class="nav flex-column mt-3">
     <%= nav_helper left_side_bar_items, "nav-link", "nav-item"%>
   </ul>

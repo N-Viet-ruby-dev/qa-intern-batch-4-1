@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       log_in @user
-      redirect_to root_path, success: "Register successfully!"
+      redirect_to @user, success: "Register successfully!"
     else
       render :new
     end

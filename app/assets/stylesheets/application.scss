@@ -1,5 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "select2-bootstrap";
+@import "select2";
 
 /*
  * Global
@@ -8,6 +10,10 @@
 body {
   background: #eeeeee;
   font-family: 'Manjari', sans-serif;
+}
+
+span.select2.select2-container.select2-container--bootstrap {
+  width: 100% !important;
 }
 
 .mg-top-75 {
