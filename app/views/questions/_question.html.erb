@@ -12,7 +12,7 @@
   <div class="col-md-3">
     <div class="row">
       <div class="col-md-6">
-        <p class="badge badge-primary ml-3"><%= question.answers.count %></p>
+        <p class="badge badge-primary ml-3 answer-count"><%= question.answers.count %></p>
         <h6 class="text-center">answers</h6>
       </div>
       <div class="col-md-6">
@@ -40,6 +40,8 @@
           </div>
         </div>
       </div>
+      <%= link_to fa_icon("trash"), question, method: :delete,
+        class: "btn btn-outline-danger btn-sm", data: { confirm: "You sure?" } %>
     <% end %>
   </div>
 </div>

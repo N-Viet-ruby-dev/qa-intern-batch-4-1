@@ -3,5 +3,7 @@
 <% else %>
   $('#answer-list').prepend('<%= j render @answer %>');
   $('#answer-form textarea').val("");
+  $('#question-<%= @question.id %> .answer-count').html('<%= @question.answers.count %>');
+  CKEDITOR.instances.answer_content.setData('');
 <% end %>
 

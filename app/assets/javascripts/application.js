@@ -5,7 +5,7 @@
 //= require activestorage
 //= require turbolinks
 //= require select2
-//= require ckeditor/init
+//= require ckeditor/config
 //= require question
 
 $(document).on('turbolinks:load', function() {
@@ -14,4 +14,3 @@ $(document).on('turbolinks:load', function() {
     placeholder: 'Select tags'
   });
 });
-
