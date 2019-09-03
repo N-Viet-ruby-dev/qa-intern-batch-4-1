@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   attr_accessor :reset_token, :remember_token
 
+  has_many :questions, dependent: :destroy
+
   validates :address, presence: true
   validates :email, presence: true, length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX }, uniqueness: true
