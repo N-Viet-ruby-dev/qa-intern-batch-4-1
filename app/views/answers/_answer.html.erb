@@ -16,6 +16,12 @@
           <span>
             <%= "Posted #{distance_of_time_in_words(answer.updated_at, Time.now)} ago." %>
           </span>
+          <% if current_user?(answer.user)%>
+            <span class="float-right">
+              <%= link_to fa_icon("edit"), edit_question_answer_path(answer.question, answer), remote: true %>
+              <%= link_to fa_icon("trash"), [answer.question, answer], method: :delete, data: { confirm: "Are you sure?" } %>
+            </span>
+          <% end %>
         </p>
       </div>
     </div>
