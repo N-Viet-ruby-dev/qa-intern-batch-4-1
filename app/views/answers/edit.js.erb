@@ -1,2 +1,2 @@
 $('#answer_<%= @answer.id %> .content').html('<%= j render "answers/form",
-  answer: @answer, btn_text: "Update" %>');
+  answer: @answer, btn_text: "Update", action: @answer.id %>');

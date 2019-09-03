@@ -79,6 +79,29 @@ p {
   };
 }
 
+/* Right sidebar */
+
+.right-sidebar {
+
+  .questions-count {
+    border-left: 4px solid blue;
+    padding-left: 10px;
+  }
+
+  .members-count {
+    border-left: 4px solid orange;
+    padding-left: 10px;
+  }
+
+  .most-used-tags {
+    padding-top: 15px;
+  }
+}
+
+.card-body {
+  padding: 0.75rem 1rem;
+}
+
 /* Custom */
 
 a.badge.badge-pill.badge-success {
@@ -110,26 +133,22 @@ p.badge.badge-primary {
   padding: 0.75rem 1rem;
 }
 
-/* Right sidebar */
-
-.right-sidebar {
-
-  .questions-count {
-    border-left: 4px solid blue;
-    padding-left: 10px;
-  }
-
-  .members-count {
-    border-left: 4px solid orange;
-    padding-left: 10px;
-  }
-
-  .most-used-tags {
-    padding-top: 15px;
-  }
+.form-group {
+  margin-bottom: 0.2rem;
 }
 
-.card-body {
-  padding: 0.75rem 1rem;
+ul {
+  list-style-type: none;
 }
 
+li.comment {
+    border-bottom: 1px dotted #ccc;
+    font-size: 0.8rem;
+    padding: 5px 0;
+}
+li.comment:last-child {
+    border: none;
+}
+.col-md-11.comment {
+    margin: 0 -30px;
+}

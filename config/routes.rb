@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :questions, except: [:new, :edit] do
     resources :answers, except: [:index, :show, :new]
+    resources :comments, except: [:index, :show, :new]
   end
 end
