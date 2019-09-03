@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2019_09_03_012605) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.string "remember_digest"
   end
 
   add_foreign_key "question_tags", "questions"

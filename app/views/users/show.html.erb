@@ -7,7 +7,7 @@
     <h3><%= @user.name.upcase %></h3>
     <hr>
     <p><%= fa_icon :envelope, text: @user.email %></p>
-    <p><%= fa_icon :phone, text: (number_to_phone @user.phone) %></p>
+    <p><%= fa_icon :phone, text: number_to_phone(@user.phone) %></p>
     <p><%= fa_icon :map , text: @user.address %></p>
   </div>
 </div>

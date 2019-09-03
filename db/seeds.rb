@@ -14,7 +14,7 @@ end
   phone = "555555555"
   address = "123 Wall Street"
   password = "123123"
-  picture = File.open(Rails.root + "app/assets/images/test.jpg")
+  picture = File.open(Rails.root.join("app", "assets", "images", "test.jpg"))
   User.create!(email: email, name: name, phone: phone, address: address,
     password: password, picture: picture)
 end
