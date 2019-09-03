@@ -1,0 +1,9 @@
+<% if @question.errors.any? %>
+  $("#question-<%= @question.id %> #error_messages_update").html('<%= j render "shared/error_messages", object: @question %>');
+  $(".modal").animate({scrollTop : 0}, 500);
+<% else %>
+  $("#question-<%= @question.id %>").replaceWith('<%= j render @question %>');
+  $("#question-<%= @question.id %> .modal").modal('hide');
+  $(".modal-backdrop").css('display', 'none');
+  $("body").css('overflow-y', 'scroll');
+<% end %>
