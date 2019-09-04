@@ -1,0 +1,13 @@
+<hr>
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag user.picture.url, width: "100%" %>
+  </div>
+  <div class="col-md-9">
+    <h3><%= link_to user.name.upcase, user_path(user) %></h3>
+    <p><%= fa_icon :envelope, text: user.email %></p>
+    <p><%= fa_icon :phone, text: (number_to_phone user.phone) %></p>
+    <p><%= fa_icon :map , text: user.address %></p>
+  </div>
+</div>
+

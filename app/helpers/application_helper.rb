@@ -14,7 +14,7 @@ module ApplicationHelper
   def nav_bar_items
     [
       { url: root_path, title: "Home"},
-      { url: "#", title: "Users"},
+      { url: users_path, title: "Users"},
       { url: "#", title: "Questions"}
     ]
   end
