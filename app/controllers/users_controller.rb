@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :logged_in, only: [:edit, :update]
+  before_action :log_in_user, only: [:edit, :update]
   before_action :load_user, only: [:show, :edit, :update]
-  before_action :valid_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 10)
+    @users = User.page(params[:page]).per(10)
   end
 
   def show;  end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     redirect_to root_path, warning: "User is not exist!" unless @user
   end
 
-  def valid_user
-    redirect_to root_path, warning: "User invalid" unless current_user?(@user)
+  def correct_user
+    redirect_to root_path, warning: "User incorrect" unless current_user?(@user)
   end
 end

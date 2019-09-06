@@ -1,5 +1,15 @@
 class QuestionsController < ApplicationController
-  before_action :logged_in, only: [:create]
+  before_action :log_in_user, only: [:create]
+
+  def index
+    @questions = Question.with_associations.with_filter(params[:category])
+      .page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   def create
     @question = current_user.questions.new question_params

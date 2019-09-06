@@ -14,13 +14,13 @@ module ApplicationHelper
     [
       { url: root_path, title: "Home"},
       { url: users_path, title: "Users"},
-      { url: "#", title: "Questions"}
+      { url: questions_path, title: "Questions"}
     ]
   end
 
   def left_side_bar_items
     [
-      { url: "#", title: "Questions"},
+      { url: questions_path, title: "Questions"},
       { url: "#", title: "Questions"},
       { url: "#", title: "Questions"},
       { url: "#", title: "Questions"},

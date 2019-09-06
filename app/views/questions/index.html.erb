@@ -1,0 +1,9 @@
+<h1>Questions</h1>
+<div id="group-filter">
+  <%= select_tag :category, options_for_select(category_collection),
+    {include_blank: "Filter by Category", class: "form-control"} %>
+</div>
+<div id="list-question">
+  <%= render @questions %>
+  <%= paginate @questions, remote: true %>
+</div>
