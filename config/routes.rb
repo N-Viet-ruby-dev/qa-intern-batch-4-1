@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :questions
 end

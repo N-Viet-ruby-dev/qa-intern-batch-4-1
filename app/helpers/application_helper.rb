@@ -1,5 +1,4 @@
 module ApplicationHelper
-  include SessionsHelper
 
   def login_helper style
     if logged_in?
