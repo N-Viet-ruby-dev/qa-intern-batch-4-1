@@ -1,5 +1,6 @@
 <%= form_for question, remote: true do |f| %>
-  <div id="error_messages"></div>
+
+  <%= content_tag :div, "", id: "error_messages_#{btn_text.downcase}" %>
 
   <div class="form-group">
     <%= f.text_field :title, class: "form-control", placeholder: "Your Question" %>

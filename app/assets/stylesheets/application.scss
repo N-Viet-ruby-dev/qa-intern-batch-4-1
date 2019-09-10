@@ -10,14 +10,11 @@
 body {
   background: #eeeeee;
   font-family: 'Manjari', sans-serif;
+  font-size: 90%;
 }
 
 span.select2.select2-container.select2-container--bootstrap {
   width: 100% !important;
-}
-
-hr {
-  border-top: 1.5px solid rgba(0, 0, 0, 0.1)
 }
 
 a {
@@ -77,11 +74,22 @@ a {
 /* Custom */
 
 a.badge.badge-pill.badge-success {
-    padding: 10px 5px 5px 5px;
+  padding: 5px 10px;
 }
 
 p.badge.badge-primary {
-    padding: 17px 15px 15px 15px;
-    border-radius: 50px;
-    margin-left: 8px;
+  padding: 15px;
+  border-radius: 50px;
+}
+.col-md-9 img {
+  width: 100%;
+}
+#list-question {
+  .question {
+    border-top: 1px solid white;
+    padding: 15px 0;
+  }
+}
+#group-filter {
+  margin-bottom: 10px;
 }
