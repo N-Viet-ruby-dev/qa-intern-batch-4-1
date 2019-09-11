@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
 
   def home
     @questions = current_user.questions.with_associations
-      .page(params[:page]).per(5)
+      .page(params[:page]).per(10)
   end
 end

@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   mount Ckeditor::Engine => "/ckeditor"
+  get "/autocomplete", to: "searches#show"
 
   resources :users, except: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :questions, except: [:new, :edit] do
     resources :answers, except: [:index, :show, :new]
   end
+  resources :searches, only: :index
 end
