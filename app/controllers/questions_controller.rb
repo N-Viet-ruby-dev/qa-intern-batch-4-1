@@ -1,15 +1,19 @@
 class QuestionsController < ApplicationController
   before_action :log_in_user, only: [:create, :update]
-  before_action :load_question, only: [:update]
+  before_action :load_question, only: [:show, :update]
 
   def index
     @questions = Question.with_associations.with_filter(params[:category])
       .page(params[:page]).per(10)
-
     respond_to do |format|
       format.html
       format.js
     end
+  end
+
+  def show
+    @answer = @question.answers.build
+    @answers = @question.answers.includes(:user)
   end
 
   def create
@@ -38,6 +42,6 @@ class QuestionsController < ApplicationController
 
   def load_question
     @question = Question.find_by id: params[:id]
-    redirect_to root_path, warning: "Question is not exist!" unless @question
+    redirect_to questions_path, info: "Question doesn't exist!" unless @question
   end
 end

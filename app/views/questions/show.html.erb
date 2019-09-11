@@ -1,0 +1,10 @@
+<%= render @question %>
+<% if logged_in? %>
+  <div id="answer-form" class="card p-3">
+    <%= render "answers/form", answer: @answer, btn_text: "Add Answer" %>
+  </div>
+<% end %>
+
+<div id="answer-list">
+  <%= render @answers %>
+</div>
