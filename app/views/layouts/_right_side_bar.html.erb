@@ -12,8 +12,10 @@
     <h7><b>MOST USED TAGS</b></h7>
     <hr>
     <% most_used_tags.each do |name,total| %>
-      <%= link_to name, "#", class: "badge badge-pill badge-secondary" %>
-      <span> x <%= total %></span>
+      <div>
+        <%= link_to name, "#", class: "badge badge-pill badge-secondary" %>
+        <span> x <%= total %></span>
+      </div>
     <% end %>
   </div>
 </div>

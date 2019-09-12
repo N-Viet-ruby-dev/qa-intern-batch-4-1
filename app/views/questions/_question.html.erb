@@ -1,6 +1,7 @@
 <div class="row question" id="question-<%= question.id %>">
   <div class="col-md-9">
-    <h4><b><%= link_to question.title, question %></b></h4>
+    <h4><b><%= link_to_unless current_page?(question_path(question.id)),
+        question.title, question %></b></h4>
     <p class="text-muted text-justify"><%= raw question.content %></p>
     <p><%= render partial: "shared/tag_show", collection: question.tags, as: :tag %></p>
     <p class="font-italic">
