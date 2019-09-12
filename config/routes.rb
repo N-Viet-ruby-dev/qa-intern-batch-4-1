@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/vote/:id", to: "answers#vote", as: "vote"
+  delete "/unvote/:id", to: "answers#unvote", as: "unvote"
+
   mount Ckeditor::Engine => "/ckeditor"
 
   resources :users, except: [:new, :create, :destroy]

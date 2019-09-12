@@ -15,7 +15,7 @@
           <%= button_tag fa_icon("close"), class: "close", data:{ dismiss: "modal" } %>
         </div>
         <div class="modal-body">
-          <%= render "questions/form", question: Question.new, btn_text: "Create" %>
+          <%= render "questions/form", question: Question.new, btn_text: "Create", action: "create" %>
         </div>
       </div>
     </div>

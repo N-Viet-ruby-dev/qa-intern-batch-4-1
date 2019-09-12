@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_034118) do
+ActiveRecord::Schema.define(version: 2019_09_12_074947) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -74,9 +74,18 @@ ActiveRecord::Schema.define(version: 2019_09_05_034118) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "remember_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "remember_digest"
+  end
+
+  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_votes_on_answer_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   add_foreign_key "answers", "questions"
@@ -85,4 +94,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_034118) do
   add_foreign_key "question_tags", "tags"
   add_foreign_key "questions", "categories"
   add_foreign_key "questions", "users"
+  add_foreign_key "votes", "answers"
+  add_foreign_key "votes", "users"
 end

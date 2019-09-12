@@ -1,0 +1,8 @@
+<% if logged_in? %>
+  <% if answer.voted current_user %>
+    <%= render "answers/unvote", answer: answer %>
+  <% else %>
+    <%= render "answers/vote", answer: answer %>
+  <% end%>
+<% end%>
+<span><i>(<%= answer.votes.count %> votes)</i></span>
