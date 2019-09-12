@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :log_in_user, only: [:create, :update]
-  before_action :load_question, only: [:show, :update]
+  before_action :log_in_user, only: [:create, :update, :destroy]
+  before_action :load_question, only: [:show, :update, :destroy]
 
   def index
     @questions = Question.with_associations.with_filter(params[:category])
@@ -32,6 +32,11 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to root_path, success: "Question deleted"
   end
 
   private

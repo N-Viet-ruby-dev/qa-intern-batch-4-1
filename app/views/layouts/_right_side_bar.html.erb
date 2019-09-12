@@ -1,9 +1,19 @@
-<div class="card mb-3">
-  <div class="card-body">
-    <h5 class="card-title">MOST USED TAGS</h5>
+<div class="right-sidebar">
+  <div class="questions-count">
+    <h6>Questions</h6>
+    <h2><b><%= Question.count %></b></h2>
+  </div>
+  <div class="members-count">
+    <h6>Members</h6>
+    <h2><b><%= User.count %></b></h2>
+  </div>
+  <br>
+  <div class="most-used-tags">
+    <h7><b>MOST USED TAGS</b></h7>
     <hr>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <% most_used_tags.each do |name,total| %>
+      <%= link_to name, "#", class: "badge badge-pill badge-secondary" %>
+      <span> x <%= total %></span>
+    <% end %>
   </div>
 </div>

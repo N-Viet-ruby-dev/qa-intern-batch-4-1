@@ -39,4 +39,8 @@ module ApplicationHelper
   def active? path
     "active" if current_page? path
   end
+
+  def most_used_tags
+    QuestionTag.joins(:tag).group(:name).count.sort_by {|k,v| v}.reverse
+  end
 end

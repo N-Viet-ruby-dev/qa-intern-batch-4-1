@@ -1,6 +1,10 @@
 <div>
-  <%= button_tag "Ask a question", class: "btn btn-primary btn-block",
-    data:{ toggle: "modal", target: "#newquestion" } %>
+  <% if logged_in? %>
+    <%= button_tag "Ask a question", class: "btn btn-primary btn-block",
+      data:{ toggle: "modal", target: "#newquestion" } %>
+  <% else %>
+    <%= link_to "Ask a question", login_path, class: "btn btn-primary btn-block" %>
+  <% end %>
   <!-- Modal -->
   <div class="modal fade" id="newquestion" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
