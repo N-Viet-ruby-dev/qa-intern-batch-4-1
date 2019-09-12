@@ -16,13 +16,26 @@
           <span>
             <%= "Posted #{distance_of_time_in_words(answer.updated_at, Time.now)} ago." %>
           </span>
-          <% if current_user?(answer.user)%>
-            <span class="float-right">
+          <span class="float-right">
+            <%= link_to_if logged_in?, fa_icon("comment"), "#",
+              data: { toggle: "collapse", target: "#comment-answer-#{answer.id}-form"} %>
+            <% if current_user?(answer.user)%>
               <%= link_to fa_icon("edit"), edit_question_answer_path(answer.question, answer), remote: true %>
               <%= link_to fa_icon("trash"), [answer.question, answer], method: :delete, data: { confirm: "Are you sure?" } %>
-            </span>
-          <% end %>
+            <% end %>
+          </span>
         </p>
+        <div class="clearfix"></div>
+        <div class="collapse" id="comment-answer-<%= answer.id %>-form" data-parent="#answer-list">
+          <div class="card card-body">
+            <%= render "comments/form", comment: comment, btn_text: "Comment", answer_id: answer.id %>
+          </div>
+        </div>
+        <div id="list-comments-answer-<%= answer.id %>">
+          <ul class="p-1 m-0">
+            <%= render select_comments(comments, answer.id) %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

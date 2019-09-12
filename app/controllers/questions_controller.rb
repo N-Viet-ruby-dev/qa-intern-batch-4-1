@@ -14,6 +14,8 @@ class QuestionsController < ApplicationController
   def show
     @answer = @question.answers.build
     @answers = @question.answers.includes(:user)
+    @comment = @question.comments.build
+    @comments = @question.comments.includes(:user)
   end
 
   def create

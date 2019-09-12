@@ -1,11 +1,23 @@
-<%= render @question %>
-<hr>
+<div id="question">
+  <%= render @question %>
+  <div class="collapse" id="comment-question-form">
+    <div class="card card-body">
+      <%= render "comments/form", comment: @comment, btn_text: "Comment", answer_id: nil %>
+    </div>
+  </div>
+  <div id="list-comments-question">
+    <ul class="p-3 m-0">
+      <%= render select_comments(@comments) %>
+    </ul>
+  </div>
+</div>
+
 <% if logged_in? %>
   <div id="answer-form" class="card p-3">
-    <%= render "answers/form", answer: @answer, btn_text: "Add Answer" %>
+    <%= render "answers/form", answer: @answer, btn_text: "Add Answer", action: "create" %>
   </div>
 <% end %>
-<hr>
-<div id="answer-list">
-  <%= render @answers %>
+
+<div class="accordion" id="answer-list">
+  <%= render @answers, comment: @comment, comments: @comments %>
 </div>

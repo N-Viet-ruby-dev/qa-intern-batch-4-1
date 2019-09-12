@@ -1,0 +1,17 @@
+<li class="comment">
+  <div class="row">
+    <div class="col-md-1">
+      <div class="text-info"><%= "##{comment.id}" %></div>
+    </div>
+    <div class="col-md-11 comment">
+      <span><%= raw comment.content %></span>
+      <span class="font-italic text-muted">
+        <%= " - #{comment.user.name} posted #{distance_of_time_in_words(comment.updated_at, Time.now)} ago." %>
+      </span>
+      <span class="float-right text-info">
+        <%= link_to fa_icon("edit"), edit_question_comment_path(comment.question, comment), remote: :true %>
+        <%= link_to fa_icon("close"), [comment.question, comment], method: :delete %>
+      </span>
+    </div>
+  </div>
+</li>
