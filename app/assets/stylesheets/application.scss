@@ -1,3 +1,7 @@
+/*
+*= require jquery-ui
+*/
+
 @import "bootstrap";
 @import "font-awesome";
 @import "select2-bootstrap";
@@ -48,6 +52,13 @@ p {
       font-size: 20px;
       margin-right: 5px;
     };
+  };
+
+  .navbar-nav {
+
+    li{
+      padding-right: 10px;
+    }
   };
 }
 
@@ -133,3 +144,30 @@ p.badge.badge-primary {
   padding: 0.75rem 1rem;
 }
 
+/* Search */
+
+.form-search {
+
+  form {
+    padding-left: 10px;
+  }
+
+  #term {
+    width: 500px;
+  }
+}
+
+.ui-widget-content {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 500px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.result-search {
+  font-style: italic;
+  padding-bottom: 15px;
+}

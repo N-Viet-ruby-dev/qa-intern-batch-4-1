@@ -11,17 +11,17 @@
   </head>
 
   <body class="container-fluid">
-    <%= render "layouts/header" %>
+    <%= render "shared/header" %>
     <div class="row mg-top-75">
       <div class="col-md-2">
-        <%= render "layouts/left_side_bar" %>
+        <%= render "shared/left_side_bar" %>
       </div>
       <div class="col-md-8">
         <%= render "shared/flash" %>
         <%= yield %>
       </div>
       <div class="col-md-2">
-        <%= render "layouts/right_side_bar" %>
+        <%= render "shared/right_side_bar" %>
       </div>
     </div>
   </body>

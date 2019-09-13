@@ -1,0 +1,8 @@
+<h1>Questions</h1>
+<div class="result-search">
+  There are <b><%= pluralize(@questions.size, "question") %></b>
+  <%= " searched by '" + params[:term] + "'" if params[:term] %>
+</div>
+<div id="list-question">
+  <%= render @questions %>
+</div>
